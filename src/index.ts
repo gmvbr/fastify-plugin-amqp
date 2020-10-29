@@ -10,7 +10,7 @@ export interface Context {
   queue: {[k: string]: amqplib.Channel};
 
   consume: (
-    queueK: string,
+    queue: string,
     onMessage: (msg: amqplib.ConsumeMessage | null) => void,
     options?: amqplib.Options.Consume
   ) => Promise<amqplib.Replies.Consume>;
