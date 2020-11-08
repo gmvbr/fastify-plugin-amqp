@@ -1,3 +1,6 @@
+.npmrc
+lib
+
 # Logs
 logs
 *.log
