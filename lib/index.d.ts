@@ -5,7 +5,7 @@ export interface Context {
     queue: {
         [k: string]: amqplib.Channel;
     };
-    consume: (queueK: string, onMessage: (msg: amqplib.ConsumeMessage | null) => void, options?: amqplib.Options.Consume) => Promise<amqplib.Replies.Consume>;
+    consume: (queue: string, onMessage: (msg: amqplib.ConsumeMessage | null) => void, options?: amqplib.Options.Consume) => Promise<amqplib.Replies.Consume>;
     sendToQueueJson(queue: string, object: any, options?: amqplib.Options.Publish | undefined): boolean;
     sendToQueueString(queue: string, object: string, options?: amqplib.Options.Publish | undefined): boolean;
     sendToQueueBuffer(queue: string, object: Buffer, options?: amqplib.Options.Publish | undefined): boolean;
